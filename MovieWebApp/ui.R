@@ -6,7 +6,6 @@ library(DT)
 library(data.table)
 source("./EDA.R")
 
-
 dashboardPage(skin = "blue",
               dashboardHeader(title = "My Movies dashboard"),
               dashboardSidebar(
