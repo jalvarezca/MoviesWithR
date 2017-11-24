@@ -24,8 +24,8 @@ dashboardPage(skin = "blue",
                               title = "Controls", 
                               status = "warning", 
                               solidHeader = TRUE,  
-                              collapsible = FALSE,
-                              sliderInput("slider", "Number of observations:", 1, 100, 50)
+                              collapsible = TRUE,
+                              sliderInput("slider", "Number of observations:", 1, 30, 10)
                             )
                           ),
                           fluidRow(
@@ -34,10 +34,12 @@ dashboardPage(skin = "blue",
                                 solidHeader = TRUE,
                                 collapsible = FALSE,
                                 background = "light-blue",
-                                plotOutput("plot1", height = 250))
-                          )
-                  ),
-                  
+                                width = 400,
+                                plotOutput("plot1", height = 350)
+                                )
+                            )
+                          ),
+             
                   # Second tab content
                   tabItem(tabName = "rawdata",
                           fluidRow(
