@@ -20,22 +20,26 @@ dashboardPage(skin = "blue",
                   # First tab content
                   tabItem(tabName = "dashboard",
                           fluidRow(
-                            box(title = "Information", 
-                                status = "primary",
-                                solidHeader = TRUE,
-                                collapsible = FALSE,
-                                background = "light-blue",
-                                plotOutput("plot1", height = 250)),
-                            
                             box(
                               title = "Controls", 
                               status = "warning", 
                               solidHeader = TRUE,  
                               collapsible = TRUE,
-                              sliderInput("slider", "Number of observations:", 1, 100, 50)
+                              sliderInput("slider", "Number of observations:", 1, 30, 10)
                             )
-                          )
-                  ),
+                          ),
+                          fluidRow(
+                            box(title = "Information", 
+                                status = "primary",
+                                solidHeader = TRUE,
+                                collapsible = FALSE,
+                                background = "light-blue",
+                                width = 400,
+                                plotOutput("plot1", height = 350)
+                                )
+                            )
+                          ),
+              
                   
                   # Second tab content
                   tabItem(tabName = "rawdata",

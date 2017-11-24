@@ -8,32 +8,13 @@ require(DT)
 require(readr)
 
 
-#install.packages("data.table")
-
-
-
-
-
 ## Data Source Variables
 DocName <- "movie_metadata.csv"       # Document Name with extension
 MyData <- paste0("./data/",DocName)   # Path for Data Source
 Dtframe <- read.csv(MyData)           # Creation of Data Frame
 
 movitable <- setDT(Dtframe)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+getwd()
 
 # Exploratory data analysis
 
@@ -60,6 +41,7 @@ MovieYear <- sort(unique(Dtframe$"title_year"))
 countOfDirectorsXMov <- table(Dtframe$director_name)
 sortDirector <- sort(countOfDirectorsXMov, decreasing = TRUE)
 
+countOfGenresXMov <- sort(table(Dtframe$genres), decreasing = TRUE)
 
 
 #############################
