@@ -39,8 +39,7 @@ dashboardPage(skin = "blue",
                                 )
                             )
                           ),
-              
-                  
+             
                   # Second tab content
                   tabItem(tabName = "rawdata",
                           fluidRow(

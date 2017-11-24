@@ -52,4 +52,5 @@ plot(sortDirector)
 
 # Graph cars using blue points overlayed by a line 
 plot(sortDirector, type="o", col="blue")
+pie(head(sortDirector))
 
