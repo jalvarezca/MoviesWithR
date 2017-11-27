@@ -10,6 +10,11 @@ DocName <- "movie_metadata.csv"       # Document Name with extension
 MyData <- paste0("./data/",DocName)   # Path for Data Source
 MoviesDf <- read.csv(MyData)  
 
+#Create Frequency table for Director Names
+countOfDirectorsXMov <- table(Dtframe$director_name)
+sortDirector <- as.data.frame(sort(countOfDirectorsXMov, decreasing = TRUE))
+sortDirector
+
 #Select only needed columns
 t1 <- select(
   .data = MoviesDf,
