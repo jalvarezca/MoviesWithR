@@ -4,7 +4,7 @@ library(shiny)
 library(shinydashboard)
 library(DT)
 library(data.table)
-source("./EDA.R")
+
 
 dashboardPage(skin = "blue",
               dashboardHeader(title = "My Movies dashboard"),
@@ -21,7 +21,7 @@ dashboardPage(skin = "blue",
                   tabItem(tabName = "dashboard",
                           fluidRow(
                             box(
-                              title = "Controls1", 
+                              title = "Show_top_Directors", 
                               status = "warning", 
                               solidHeader = TRUE,  
                               collapsible = TRUE,
@@ -29,7 +29,7 @@ dashboardPage(skin = "blue",
                             )
                           ),
                           fluidRow(
-                            box(title = "Information", 
+                            box(title = "Movies_by_Director", 
                                 status = "primary",
                                 solidHeader = TRUE,
                                 collapsible = FALSE,

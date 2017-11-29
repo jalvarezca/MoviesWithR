@@ -5,6 +5,7 @@ require(DT)
 require(readr)
 require(ggplot2)
 
+
 ## Data Source Variables
 DocName <- "movie_metadata.csv"       # Document Name with extension
 MyData <- paste0("./data/",DocName)   # Path for Data Source
@@ -13,7 +14,6 @@ MoviesDf <- read.csv(MyData)
 #Create Frequency table for Director Names
 countOfDirectorsXMov <- table(Dtframe$director_name)
 sortDirector <- as.data.frame(sort(countOfDirectorsXMov, decreasing = TRUE))
-sortDirector
 
 #Select only needed columns
 t1 <- select(
@@ -59,7 +59,11 @@ t5 <- summarize(
   
 
 #Order by total of movies in descendent order
-t6 <- arrange(t5,desc(total_movies))
+dirSortTotMovies <- arrange(t5,desc(total_movies))
+head(dirSortTotMovies)
+
+dirSortTotProfit <- arrange(t5,desc(total_profit))
+head(dirSortTotProfit)
 
 ggplot(data = head(t6,10)) +
   geom_bar(mapping = aes(x = director_name, y = total_movies , fill=director_name), stat = "identity")

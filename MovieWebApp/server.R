@@ -20,16 +20,15 @@ server <- function(input, output) {
   #   )
   
   output$plot1 <- renderPlot(
-      ggplot(data = head(t6,input$slider1)) +
+      ggplot(data = head(dirSortTotMovies,input$slider1)) +
         geom_bar(mapping = aes(x = director_name, y = total_movies , fill=director_name), stat = "identity")
       )
   
   output$plot2 <- renderPlot(
-        ggplot(
-          data = tDir,
-          aes(x = director_name)) +
-          geom_bar()
-      )
+    ggplot(data = head(dirSortTotProfit,input$slider2)) +
+      geom_bar(mapping = aes(x = director_name, y = total_profit , fill=director_name), stat = "identity")
+  )
+
   
   output$moviesTable <- renderDataTable({
     Dtframe })
